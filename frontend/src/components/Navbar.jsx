@@ -7,12 +7,14 @@ import {
   MapPin, 
   BarChart3, 
   Sparkles,
-  UserCheck,
-  Sliders
+  UserCheck, 
+  Sliders,
+  LogIn,
+  LogOut
 } from 'lucide-react';
 
 export default function Navbar({ activeTab, setActiveTab }) {
-  const { user, switchDemoRole } = useAuth();
+  const { user, logout, switchDemoRole } = useAuth();
 
   const navItems = [
     { id: 'citizen', label: 'Citizen Portal', icon: FileText },
@@ -27,6 +29,11 @@ export default function Navbar({ activeTab, setActiveTab }) {
     if (role === 'CITIZEN') setActiveTab('citizen');
     else if (role === 'OFFICER') setActiveTab('officer');
     else if (role === 'ADMIN') setActiveTab('admin');
+  };
+
+  const handleLogout = () => {
+    logout();
+    setActiveTab('login');
   };
 
   return (
@@ -75,10 +82,10 @@ export default function Navbar({ activeTab, setActiveTab }) {
             })}
           </nav>
 
-          {/* Role Switcher Pill */}
+          {/* Role Switcher Pill & Auth Controls */}
           <div className="flex items-center space-x-3">
-            <div className="flex items-center bg-slate-800 border border-slate-700 rounded-xl p-1 shadow-inner">
-              <span className="hidden sm:flex text-xs text-slate-400 px-2 items-center">
+            <div className="hidden sm:flex items-center bg-slate-800 border border-slate-700 rounded-xl p-1 shadow-inner">
+              <span className="text-xs text-slate-400 px-2 items-center flex">
                 <UserCheck className="w-3.5 h-3.5 mr-1 text-slate-300" /> Role:
               </span>
               <button
@@ -116,11 +123,50 @@ export default function Navbar({ activeTab, setActiveTab }) {
               </button>
             </div>
 
-            <div className="hidden lg:flex items-center space-x-2 text-right">
-              <div className="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center font-bold text-sky-400 text-xs border border-slate-600">
-                {user?.full_name?.charAt(0) || 'U'}
+            {/* Login / User Session Profile Button */}
+            {user ? (
+              <div className="flex items-center space-x-2">
+                <button
+                  type="button"
+                  onClick={() => setActiveTab('login')}
+                  title="Switch User / Login Page"
+                  className={`flex items-center space-x-2 px-2.5 py-1.5 rounded-xl border transition-all cursor-pointer ${
+                    activeTab === 'login'
+                      ? 'bg-sky-600/30 border-sky-400 text-sky-200'
+                      : 'bg-slate-800/80 border-slate-700 hover:border-slate-600 text-slate-300 hover:text-white'
+                  }`}
+                >
+                  <div className="w-6 h-6 rounded-lg bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center font-bold text-white text-xs">
+                    {user?.full_name ? user.full_name.charAt(0) : 'U'}
+                  </div>
+                  <span className="text-xs font-medium hidden lg:inline max-w-[120px] truncate">
+                    {user.full_name?.split(' ')[0]}
+                  </span>
+                </button>
+                <button
+                  type="button"
+                  onClick={handleLogout}
+                  title="Sign Out"
+                  className="p-2 text-slate-400 hover:text-rose-400 hover:bg-slate-800 rounded-xl transition-all cursor-pointer"
+                >
+                  <LogOut className="w-4 h-4" />
+                </button>
               </div>
-            </div>
+            ) : (
+              <button
+                type="button"
+                onClick={() => setActiveTab('login')}
+                className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                  activeTab === 'login'
+                    ? 'bg-sky-600 text-white shadow-sm ring-1 ring-sky-400'
+                    : 'bg-sky-500/10 text-sky-400 hover:bg-sky-500/20 border border-sky-500/30'
+                }`}
+              >
+                <LogIn className="w-4 h-4" />
+                <span>Sign In</span>
+              </button>
+            )}
+
           </div>
         </div>
       </div>
@@ -144,6 +190,16 @@ export default function Navbar({ activeTab, setActiveTab }) {
             </button>
           );
         })}
+        <button
+          type="button"
+          onClick={() => setActiveTab('login')}
+          className={`flex-1 flex items-center justify-center space-x-1.5 py-2 px-2 rounded-md text-xs font-semibold whitespace-nowrap cursor-pointer ${
+            activeTab === 'login' ? 'bg-sky-600 text-white' : 'text-slate-400 hover:bg-slate-800'
+          }`}
+        >
+          <LogIn className="w-3.5 h-3.5" />
+          <span>Login</span>
+        </button>
       </div>
     </header>
   );
