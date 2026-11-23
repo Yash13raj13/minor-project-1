@@ -7,7 +7,8 @@ import {
   MapPin, 
   BarChart3, 
   Sparkles,
-  UserCheck
+  UserCheck,
+  Sliders
 } from 'lucide-react';
 
 export default function Navbar({ activeTab, setActiveTab }) {
@@ -16,9 +17,17 @@ export default function Navbar({ activeTab, setActiveTab }) {
   const navItems = [
     { id: 'citizen', label: 'Citizen Portal', icon: FileText },
     { id: 'officer', label: 'Officer Triaging', icon: ShieldCheck },
+    { id: 'admin', label: 'Admin Console', icon: Sliders },
     { id: 'map', label: 'Grievance Map', icon: MapPin },
     { id: 'analytics', label: 'Governance Analytics', icon: BarChart3 },
   ];
+
+  const handleRoleSwitch = async (role) => {
+    await switchDemoRole(role);
+    if (role === 'CITIZEN') setActiveTab('citizen');
+    else if (role === 'OFFICER') setActiveTab('officer');
+    else if (role === 'ADMIN') setActiveTab('admin');
+  };
 
   return (
     <header className="bg-slate-900 border-b border-slate-800 text-white sticky top-0 z-50 shadow-md">
@@ -74,7 +83,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
               </span>
               <button
                 type="button"
-                onClick={() => switchDemoRole('CITIZEN')}
+                onClick={() => handleRoleSwitch('CITIZEN')}
                 className={`text-xs px-2.5 py-1 rounded-lg font-bold transition-all cursor-pointer ${
                   user?.role === 'CITIZEN' 
                     ? 'bg-sky-600 text-white shadow-sm ring-1 ring-sky-400' 
@@ -85,7 +94,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
               </button>
               <button
                 type="button"
-                onClick={() => switchDemoRole('OFFICER')}
+                onClick={() => handleRoleSwitch('OFFICER')}
                 className={`text-xs px-2.5 py-1 rounded-lg font-bold transition-all cursor-pointer ${
                   user?.role === 'OFFICER' 
                     ? 'bg-amber-600 text-white shadow-sm ring-1 ring-amber-400' 
@@ -96,7 +105,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
               </button>
               <button
                 type="button"
-                onClick={() => switchDemoRole('ADMIN')}
+                onClick={() => handleRoleSwitch('ADMIN')}
                 className={`text-xs px-2.5 py-1 rounded-lg font-bold transition-all cursor-pointer ${
                   user?.role === 'ADMIN' 
                     ? 'bg-purple-600 text-white shadow-sm ring-1 ring-purple-400' 

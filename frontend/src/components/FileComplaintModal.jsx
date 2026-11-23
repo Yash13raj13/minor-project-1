@@ -237,19 +237,75 @@ export default function FileComplaintModal({ isOpen, onClose, onComplaintCreated
 
             <div>
               <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">
-                Category
+                Category (8 Municipal Classes)
               </label>
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
                 className="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500"
               >
-                <option value="Roads & Infrastructure">Roads & Infrastructure</option>
-                <option value="Sanitation & Solid Waste">Sanitation & Solid Waste</option>
-                <option value="Water Supply & Sewage">Water Supply & Sewage</option>
+                <option value="Infrastructure & Roads">Infrastructure & Roads</option>
+                <option value="Water Supply & Drainage">Water Supply & Drainage</option>
                 <option value="Electricity & Street Lighting">Electricity & Street Lighting</option>
+                <option value="Sanitation & Waste Management">Sanitation & Waste Management</option>
                 <option value="Public Health & Environment">Public Health & Environment</option>
+                <option value="Traffic & Road Safety">Traffic & Road Safety</option>
+                <option value="Building Safety">Building Safety</option>
+                <option value="Parks & Public Spaces">Parks & Public Spaces</option>
               </select>
+            </div>
+          </div>
+
+          {/* Multilingual Quick Sample Prompts */}
+          <div className="pt-1">
+            <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider block mb-1.5">
+              Quick Test Prompts (Bilingual Dataset Examples):
+            </span>
+            <div className="flex flex-wrap gap-1.5">
+              <button
+                type="button"
+                onClick={() => {
+                  setTitle("Severe pothole on main road");
+                  setDescription("A massive pothole near Gate 2 is causing frequent accidents for two-wheelers.");
+                  setCategory("Infrastructure & Roads");
+                }}
+                className="text-[11px] px-2.5 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg font-medium transition cursor-pointer"
+              >
+                🇬🇧 English Pothole
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setTitle("रस्त्यावरील खड्डा");
+                  setDescription("रस्त्यावर मोठा खड्डा पडला आहे, वाहने घसरून अपघात होत आहेत.");
+                  setCategory("Infrastructure & Roads");
+                }}
+                className="text-[11px] px-2.5 py-1 bg-orange-50 hover:bg-orange-100 text-orange-800 rounded-lg font-medium transition cursor-pointer border border-orange-200"
+              >
+                🇮🇳 Marathi (खड्डा)
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setTitle("Paani ki pipeline leak");
+                  setDescription("Main pipeline leak ho rahi hai, hazaron litre peene ka paani sadak par beh raha hai.");
+                  setCategory("Water Supply & Drainage");
+                }}
+                className="text-[11px] px-2.5 py-1 bg-sky-50 hover:bg-sky-100 text-sky-800 rounded-lg font-medium transition cursor-pointer border border-sky-200"
+              >
+                🇮🇳 Hinglish (Water Leak)
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setTitle("तुटलेली वीज तार");
+                  setDescription("जीवंत विजेची तार तुटून रस्त्यावर पडली आहे, ठिणग्या उडत आहेत त्वरित बंद करा.");
+                  setCategory("Electricity & Street Lighting");
+                }}
+                className="text-[11px] px-2.5 py-1 bg-rose-50 hover:bg-rose-100 text-rose-800 rounded-lg font-medium transition cursor-pointer border border-rose-200"
+              >
+                ⚡ Critical Hazard (विजेची तार)
+              </button>
             </div>
           </div>
 

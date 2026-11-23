@@ -1,0 +1,32 @@
+{
+  "label2id": {
+    "Infrastructure & Roads": 0,
+    "Water Supply & Drainage": 1,
+    "Electricity & Street Lighting": 2,
+    "Sanitation & Waste Management": 3,
+    "Public Health & Environment": 4,
+    "Traffic & Road Safety": 5,
+    "Building Safety": 6,
+    "Parks & Public Spaces": 7
+  },
+  "id2label": {
+    "0": "Infrastructure & Roads",
+    "1": "Water Supply & Drainage",
+    "2": "Electricity & Street Lighting",
+    "3": "Sanitation & Waste Management",
+    "4": "Public Health & Environment",
+    "5": "Traffic & Road Safety",
+    "6": "Building Safety",
+    "7": "Parks & Public Spaces"
+  },
+  "categories": [
+    "Infrastructure & Roads",
+    "Water Supply & Drainage",
+    "Electricity & Street Lighting",
+    "Sanitation & Waste Management",
+    "Public Health & Environment",
+    "Traffic & Road Safety",
+    "Building Safety",
+    "Parks & Public Spaces"
+  ]
+}

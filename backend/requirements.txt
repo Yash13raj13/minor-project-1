@@ -11,10 +11,36 @@ python-jose[cryptography]>=3.3.0
 python-multipart>=0.0.9
 alembic>=1.13.1
 httpx>=0.27.0
+
+# ─── AI / ML Core ─────────────────────────────────────────────────────────────
 numpy>=1.24.0
-sentence-transformers>=2.7.0
-faiss-cpu>=1.7.4
-transformers>=4.40.0
 torch>=2.0.0
 
+# ─── Classification: XLM-RoBERTa, mDeBERTa, Yama-Indic ───────────────────────
+transformers>=4.40.0
+datasets>=2.19.0
+evaluate>=0.4.0
+scikit-learn>=1.4.0
 
+# ─── LoRA Fine-Tuning (reduces GPU requirement significantly) ─────────────────
+# Uncomment when training: peft>=0.10.0
+
+# ─── Duplicate Detection: Indic BGE-M3 embeddings ────────────────────────────
+sentence-transformers>=3.0.0
+faiss-cpu>=1.7.4
+
+# ─── NLP Preprocessing ────────────────────────────────────────────────────────
+# Language detection
+langdetect>=1.0.9
+
+# Multilingual tokenisation & lemmatisation (Stanza)
+# Download models at runtime: stanza.download('en'); stanza.download('hi')
+stanza>=1.7.0
+
+# Indic script normalisation
+# indic-nlp-library — install separately if needed:
+# pip install indic-nlp-library
+# Note: May require special setup on Windows — see project README.
+
+# ─── Data Processing ──────────────────────────────────────────────────────────
+pandas>=2.0.0

@@ -1,0 +1,9 @@
+{
+  "task": "incident_attributes",
+  "targets": [
+    "immediate_risk",
+    "severity",
+    "public_exposure"
+  ],
+  "trained_samples": 800
+}

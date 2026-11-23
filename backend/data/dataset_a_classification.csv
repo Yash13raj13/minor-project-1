@@ -1,0 +1,25 @@
+complaint_id,complaint_text,language,category,subcategory,severity,immediate_risk,public_exposure,ongoing_incident,urgency_claim,evidence_quality
+C0001,Large pothole near school gate causing accidents,en,Infrastructure & Roads,Pothole / Road Damage,3,1,4,1,0,3
+C0002,Road pe bahut bada gaddha hai, accident ho sakta hai,hinglish,Infrastructure & Roads,Pothole / Road Damage,3,1,3,1,0,2
+C0003,Metro station ke paas footpath broken hai,hinglish,Infrastructure & Roads,Broken Footpath,2,0,3,0,0,2
+C0004,Bridge near sector 12 has visible deep cracks and vibration,en,Infrastructure & Roads,Bridge Damage,4,1,3,0,0,3
+C0005,Water pipeline leaking near school for 3 days, clean water wasting,en,Water Supply & Drainage,Pipeline Leakage,3,0,4,1,0,3
+C0006,Paani ki pipeline leak ho rahi hai sadak par,hinglish,Water Supply & Drainage,Pipeline Leakage,3,0,3,1,0,2
+C0007,No water supply in our colony since yesterday morning,en,Water Supply & Drainage,No Water Supply,3,0,3,1,0,2
+C0008,Naali ka paani sadak par aa raha hai ganda foul smell,hinglish,Water Supply & Drainage,Sewage Overflow,3,0,3,1,0,2
+C0009,Drain is completely blocked and sewage overflowing onto road,en,Water Supply & Drainage,Drain Blockage,3,0,2,1,0,2
+C0010,Exposed live electric wire hanging near playground, urgent danger,en,Electricity & Street Lighting,Exposed / Live Wire,5,1,5,1,1,4
+C0011,Street light kaam nahi kar rahi pillar 44 ke paas,hinglish,Electricity & Street Lighting,Streetlight Failure,2,0,2,1,0,2
+C0012,Power outage in ward 7 since 6 AM today,en,Electricity & Street Lighting,Power Outage,2,0,2,1,0,2
+C0013,Garbage pile near primary school not cleared for 5 days, severe smell,en,Sanitation & Waste Management,Garbage Pileup,3,0,4,1,0,3
+C0014,Kachra main market ke bahar bahut zyada jama ho gaya hai,hinglish,Sanitation & Waste Management,Garbage Pileup,3,0,4,1,0,2
+C0015,Illegal dumping of construction debris on public sidewalk,en,Sanitation & Waste Management,Illegal Dumping,2,0,2,0,0,2
+C0016,Stagnant water near apartment breeding mosquitoes, dengue risk,en,Public Health & Environment,Mosquito Breeding / Dengue Risk,3,1,4,1,0,3
+C0017,Machchar bahut zyada hain open naali ke paas,hinglish,Public Health & Environment,Mosquito Breeding / Dengue Risk,3,0,3,1,0,2
+C0018,Pack of aggressive stray dogs attacking residents near park gate,en,Public Health & Environment,Stray Animal Attack,4,1,4,1,0,3
+C0019,Traffic signal malfunctioning at main crossing since 2 days,en,Traffic & Road Safety,Signal Failure,2,1,3,1,0,2
+C0020,Illegal parking blocking emergency hospital ambulance access,en,Traffic & Road Safety,Illegal Parking Obstruction,3,1,4,1,1,2
+C0021,Old commercial building wall showing severe cracks and may collapse,en,Building Safety,Unsafe / Collapsing Structure,5,1,4,1,0,3
+C0022,Fallen heavy tree branch blocking public park entrance walkway,en,Parks & Public Spaces,Fallen Tree,2,0,2,0,0,2
+C0023,Children playground swing chains broken and rusted,en,Parks & Public Spaces,Broken Equipment,3,1,3,0,0,3
+

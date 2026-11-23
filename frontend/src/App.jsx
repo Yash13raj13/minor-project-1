@@ -3,6 +3,7 @@ import { AuthProvider } from './context/AuthContext';
 import Navbar from './components/Navbar';
 import CitizenPortal from './pages/CitizenPortal';
 import OfficerDashboard from './pages/OfficerDashboard';
+import AdminDashboard from './pages/AdminDashboard';
 import GrievanceMap from './pages/GrievanceMap';
 import AnalyticsDashboard from './pages/AnalyticsDashboard';
 
@@ -15,6 +16,7 @@ function AppContent() {
       <main className="flex-1">
         {activeTab === 'citizen' && <CitizenPortal />}
         {activeTab === 'officer' && <OfficerDashboard />}
+        {activeTab === 'admin' && <AdminDashboard />}
         {activeTab === 'map' && <GrievanceMap />}
         {activeTab === 'analytics' && <AnalyticsDashboard />}
       </main>
